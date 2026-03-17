@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>21 de Marzo 🌼</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family: 'Segoe UI', sans-serif;
+height:100vh;
+background:linear-gradient(135deg,#fff8b5,#ffd86b);
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+/* tarjeta */
+
+.card{
+background:rgb(65, 144, 229);
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(250, 250, 250, 0.973);
+animation:float 3s ease-in-out infinite;
+z-index:2;
+max-width:500px;
+}
+
+h1{
+color:#27ec00;
+font-size:40px;
+margin-bottom:10px;
+}
+
+p{
+font-size:20px;
+color:#ffffff;
+line-height:1.5;
+}
+
+.friend{
+color:#ffee00;
+font-weight:bold;
+}
+
+/* animacion tarjeta */
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+/* flores */
+
+.flower{
+position:absolute;
+font-size:30px;
+animation:fall linear infinite;
+opacity:0.9;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px) rotate(0deg);
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+
+/* brillo */
+
+.sparkle{
+position:absolute;
+width:5px;
+height:5px;
+background:rgb(23, 194, 233);
+border-radius:50%;
+animation:sparkle 2s infinite;
+}
+
+@keyframes sparkle{
+0%{opacity:0}
+50%{opacity:1}
+100%{opacity:0}
+}
+
+footer{
+position:absolute;
+bottom:20px;
+font-size:14px;
+color:#555;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🌼 21 de Marzo 🌼</h1>
+
+<p>
+Las flores amarillas simbolizan amistad, alegría y cariño.
+</p>
+
+<p>
+Hoy quiero recordarte algo:
+</p>
+
+<p class="friend">
+"Una margarita para una amargadita, Feliz dia de las flores amarillas Bot, Manca, Primera sangre
+y recuerda tu puedes ser lo que quieras ser uoh oh oh. 🌼💛"
+</p>
+
+</div>
+
+<footer>
+Hecho con cariño de amigos 🌼
+</footer>
+<audio autoplay loop>
+<source src="amarillas.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* lluvia de flores */
+
+function crearFlor(){
+
+const flor = document.createElement("div")
+
+flor.classList.add("flower")
+
+flor.innerHTML="🌼"
+
+flor.style.left=Math.random()*100+"vw"
+
+flor.style.animationDuration=(3+Math.random()*5)+"s"
+
+flor.style.fontSize=(20+Math.random()*30)+"px"
+
+document.body.appendChild(flor)
+
+setTimeout(()=>{
+flor.remove()
+},8000)
+
+}
+
+setInterval(crearFlor,200)
+
+
+/* chispas */
+
+function crearBrillo(){
+
+const spark = document.createElement("div")
+
+spark.classList.add("sparkle")
+
+spark.style.left=Math.random()*100+"vw"
+spark.style.top=Math.random()*100+"vh"
+
+document.body.appendChild(spark)
+
+setTimeout(()=>{
+spark.remove()
+},2000)
+
+}
+
+setInterval(crearBrillo,300)
+
+
+</script>
+
+
+</body>
+</html>
